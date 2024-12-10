@@ -1,13 +1,29 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Disponible from "../components/Disponible.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-<main>
-	
-</main>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-10">
+      <h1
+        class="font-bold text-4xl flex justify-around items-center flex-row pb-6"
+      >
+        Hola, soy Jhonjandrys <a
+          href="https://www.linkedin.com/in/jhonjandrysdev/"
+          target="_blank"
+          rel="noopener"
+          class="flex items-center"
+        >
+          <Disponible>Disponible para trabajar</Disponible>
+        </a>
+      </h1>
+      <h2 class="text-2xl text-justify opacity-80">
+        <span class="text-[color:#2f6fe3] font-bold hover:text-[color:#2815c3]">Desarrollador Frontend 💻</span> con +1 año de experiencia como Freelance, en
+        busqueda de mi primera experiencia profesional y me especializo en
+        desarrollo de paginas y aplicaciones web que aporten una excelente
+        experiencia al usuario.
+      </h2>
+    </section>
+  </main>
 </Layout>
