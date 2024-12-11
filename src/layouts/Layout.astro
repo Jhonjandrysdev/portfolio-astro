@@ -1,16 +1,19 @@
 ---
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
 ---
+
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="description", content="Contrata a Jhonjandrys para crear tu pagina web o aplicación y hacer tu sueño real. Desarrollador y programador web con +1 año de experiencia">
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>Portafolio de Jhonjandrys - Desarrollador y progamador Web</title>
   </head>
   <body>
     <div
@@ -19,6 +22,7 @@ import "@fontsource-variable/onest";
     </div>
     <Header />
     <slot />
+    <Footer/>
   </body>
 </html>
 
@@ -31,9 +35,15 @@ import "@fontsource-variable/onest";
     background-color: #050505;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;  
   }
   body {
     margin: 0 auto;
     font-family: "Onest Variable", sans-serif;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{
+      scroll-behavior: auto;
+    }
   }
 </style>

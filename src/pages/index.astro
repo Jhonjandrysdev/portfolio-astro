@@ -1,11 +1,18 @@
 ---
+import ContainerSection from "../components/ContainerSection.astro";
 import Disponible from "../components/Disponible.astro";
+import Experiencia from "../components/Experiencia.astro";
+import Iconos from "../components/Iconos.astro";
+import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
+import Mail from "../icons/Mail.astro";
+import WhatsApp from "../icons/WhatsApp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <main>
-    <section class="w-full lg:w-[740px] mx-auto py-10">
+    <ContainerSection class="w-full lg:w-[800px] mx-auto py-10">
       <h1
         class="font-bold text-4xl flex justify-around items-center flex-row pb-6"
       >
@@ -19,11 +26,35 @@ import Layout from "../layouts/Layout.astro";
         </a>
       </h1>
       <h2 class="text-2xl text-justify opacity-80">
-        <span class="text-[color:#2f6fe3] font-bold hover:text-[color:#2815c3]">Desarrollador Frontend 💻</span> con +1 año de experiencia como Freelance, en
-        busqueda de mi primera experiencia profesional y me especializo en
-        desarrollo de paginas y aplicaciones web que aporten una excelente
-        experiencia al usuario.
+        <span class="text-[color:#2f6fe3] font-bold hover:text-[color:#2815c3]"
+          >Desarrollador Frontend 💻</span
+        > con +1 año de experiencia como Freelance, en busqueda de mi primera experiencia
+        profesional y me especializo en desarrollo de paginas y aplicaciones web
+        que aporten una excelente experiencia al usuario.
       </h2>
-    </section>
+      <nav class="flex gap-x-5 pt-4">
+        <Iconos href="https://www.linkedin.com/in/jhonjandrysdev/">
+          <Linkedin class="w-6 h-6" />
+          LinkedIn
+        </Iconos>
+        <Iconos href="https://github.com/Jhonjandrysdev">
+          <Github class="w-6 h-6" />
+          GitHub
+        </Iconos>
+        <Iconos href="mailto:jhonjandrysramirez10@gmail.com">
+          <Mail class="w-6 h-6" />
+          jhonjandrysramirez10@gmail.com
+        </Iconos>
+        <Iconos
+          href="https://wa.me/3022825766?text=Hola%20Jhonjandrys%20estoy%20intersado%20en%20un%20proyecto%20💻"
+        >
+          <WhatsApp class="w-10 h-6" />
+          +57 3022825766
+        </Iconos>
+      </nav>
+    </ContainerSection>
+    <ContainerSection id="experiencia">
+      <Experiencia/>
+    </ContainerSection>
   </main>
 </Layout>
