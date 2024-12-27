@@ -3,6 +3,7 @@ import ContainerSection from "../components/ContainerSection.astro";
 import Disponible from "../components/Disponible.astro";
 import Experiencia from "../components/Experiencia.astro";
 import Iconos from "../components/Iconos.astro";
+import Projects from "../components/Projects.astro";
 import SectionTitles from "../components/SectionTitles.astro";
 import Brief from "../icons/Brief.astro";
 import Code from "../icons/Code.astro";
@@ -56,7 +57,7 @@ import Layout from "../layouts/Layout.astro";
         </Iconos>
       </nav>
     </ContainerSection>
-    
+
     <ContainerSection id="experiencia">
       <SectionTitles titulo="Experiencia Laboral">
         <Brief class="size-7" />
@@ -68,6 +69,7 @@ import Layout from "../layouts/Layout.astro";
       <SectionTitles titulo="Proyectos">
         <Code class="size-7" />
       </SectionTitles>
+      <Projects/>
     </ContainerSection>
   </main>
 </Layout>
