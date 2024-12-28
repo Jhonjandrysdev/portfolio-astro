@@ -4,12 +4,15 @@ import Header from "../components/Header.astro";
 import "@fontsource-variable/onest";
 ---
 
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description", content="Contrata a Jhonjandrys para crear tu pagina web o aplicación y hacer tu sueño real. Desarrollador y programador web con +1 año de experiencia">
+    <meta
+      name="description"
+      ,
+      content="Contrata a Jhonjandrys para crear tu pagina web o aplicación y hacer tu sueño real. Desarrollador y programador web con +1 año de experiencia"
+    />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -17,12 +20,12 @@ import "@fontsource-variable/onest";
   </head>
   <body>
     <div
-      class="absolute inset-0 -z-10 h-full w-full items-center [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#2f6fe3_100%)]"
+      class="absolute inset-0 -z-10 min-h-screen w-full bg-[radial-gradient(125%_125%_at_50%_10%,#000_40%,#2f6fe3_100%)]"
     >
-    <Header />
-    <slot />
-    <Footer/>
-  </div>
+      <Header />
+      <slot />
+      <Footer />
+    </div>
   </body>
 </html>
 
@@ -35,14 +38,14 @@ import "@fontsource-variable/onest";
     background-color: #050505;
     display: flex;
     flex-direction: column;
-    scroll-behavior: smooth;  
+    scroll-behavior: smooth;
   }
   body {
     margin: 0 auto;
     font-family: "Onest Variable", sans-serif;
   }
-  @media (prefers-reduced-motion: reduce){
-    html{
+  @media (prefers-reduced-motion: reduce) {
+    html {
       scroll-behavior: auto;
     }
   }
