@@ -10,22 +10,18 @@ import Code from "../icons/Code.astro";
 import Github from "../icons/Github.astro";
 import Linkedin from "../icons/Linkedin.astro";
 import Mail from "../icons/Mail.astro";
-import WhatsApp from "../icons/WhatsApp.astro";
 import Layout from "../layouts/Layout.astro";
 ---
-
 <Layout>
   <main class="px-4 flex flex-col md:flex lg:flex">
     <ContainerSection class="w-full lg:w-[800px] mx-auto py-10">
       <h1
-        class="font-bold text-2xl md:text-4xl lg:text-5xl flex gap-x-4 items-center flex-row pb-5 lg:pb-7"
-      >
+        class="font-bold text-2xl md:text-4xl lg:text-5xl flex gap-x-4 items-center flex-row pb-5 lg:pb-7">
         Hola, soy Jhonjandrys <a
           href="https://www.linkedin.com/in/jhonjandrysdev/"
           target="_blank"
           rel="noopener"
-          class="flex items-center"
-        >
+          class="flex items-center">
           <Disponible>Disponible para trabajar</Disponible>
         </a>
       </h1>
@@ -36,7 +32,7 @@ import Layout from "../layouts/Layout.astro";
         profesional y me especializo en desarrollo de paginas y aplicaciones web
         que aporten una excelente experiencia al usuario.
       </h2>
-      <nav class="flex gap-5 pt-4 flex-wrap">
+      <nav class="flex gap-5 pt-4 flex-wrap ">
         <Iconos href="https://www.linkedin.com/in/jhonjandrysdev/">
           <Linkedin class="size-4" />
           LinkedIn
@@ -49,15 +45,8 @@ import Layout from "../layouts/Layout.astro";
           <Mail class="size-4" />
           jhonjandrysramirez10@gmail.com
         </Iconos>
-        <Iconos
-          href="https://wa.me/3022825766?text=Hola%20Jhonjandrys%20estoy%20intersado%20en%20un%20proyecto%20💻"
-        >
-          <WhatsApp class="size-4 lg:size-6" />
-          +57 3022825766
-        </Iconos>
       </nav>
     </ContainerSection>
-
     <ContainerSection id="experiencia">
       <SectionTitles titulo="Experiencia Laboral">
         <Brief class="size-7" />
@@ -69,7 +58,7 @@ import Layout from "../layouts/Layout.astro";
       <SectionTitles titulo="Proyectos">
         <Code class="size-7" />
       </SectionTitles>
-      <Projects/>
+      <Projects />
     </ContainerSection>
   </main>
 </Layout>
