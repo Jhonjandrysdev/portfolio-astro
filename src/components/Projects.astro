@@ -4,6 +4,9 @@ import Firebase from "../icons/Firebase.astro";
 import Javascript from "../icons/Javascript.astro";
 import React from "../icons/React.astro";
 import Tailwind from "../icons/Tailwind.astro";
+import ButtonPage from "./ButtonPage.astro";
+import Iconos from "../components/Iconos.astro";
+
 
 const TAGS = {
   REACT: {
@@ -56,7 +59,7 @@ const PROYECTOS = [
       "Desarrollo de una calculadora interactiva como proyecto personal. Implementada con React y JSX, la calculadora incluye funcionalidades como operaciones básicas y diseño amigable para el usuario. Este proyecto refleja la capacidad de construir interfaces funcionales y útiles con fundamentos sólidos en JavaScript. - ",
     Link: "https://calculadorajhonjandrysdev.netlify.app/",
     Imagen: "/public/calculate.jpg",
-    Github: "#",
+    Github: "https://github.com/Jhonjandrysdev/Calculadora",
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.CSS],
   }
 ];
@@ -65,7 +68,7 @@ const PROYECTOS = [
 {
   PROYECTOS.map((project) => (
     <article class="mb-10">
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">
         {project.Titulo}
       </h3>
       <p class="text-base font-semibold text-gray-500 dark:text-gray-400 text-justify mb-4">
@@ -74,12 +77,18 @@ const PROYECTOS = [
       <ul class="flex  gap-x-4 mb-4 items-center">
         {project.Tags.map((tag) => (
           <li>
-            <span class=" flex items-center gap-3 text-sm py-2 px-2 rounded-full">
+            <Iconos>
+            <span class=" flex items-center gap-3 text-sm py-1 px-1 rounded-full">
               <tag.icon class="size-5" /> {tag.name}
             </span>
+          </Iconos>
           </li>
         ))}
       </ul>
+      <div class="flex  gap-x-4 mb-8 items-center">
+            <ButtonPage Link={project.Link} Title="Ir al Proyecto 💻" Target="_blank"/>
+            <ButtonPage Link={project.Github} Title="Ir a Repositorio" Target="_blank"/>
+          </div>
       <img
         src={project.Imagen}
         alt={`Captura de pantalla del proyecto ${project.Imagen}`}
