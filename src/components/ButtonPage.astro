@@ -3,12 +3,12 @@ const {Link, Title, Target} = Astro.props
 ---
 
 <a
+{...Astro.props.class}
     href={Link}
     target={Target}
     rel="noopener"
     class="border rounded-full inline-flex gap-x-2 py-2 justify-center items-center px-3 text-sm font-medium hover:bg-gray-100 dark:[background-color:#2f6fe3] dark:border-white hover:font-bold dark:hover:[background-color:#2815c3] dark:text-white hover:scale-110 transition"
     ><svg
-    {...Astro.props.class}
       class="size-3 ms-2 rtl:rotate-180"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
