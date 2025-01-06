@@ -1,8 +1,15 @@
-<header class="flex justify-between items-center p-4 w-[420px] xl:w-[420px] mx-auto my-4 fixed top-0 right-0 left-0 rounded-2xl bg-stone-500">
+---
+import Brief from "../icons/Brief.astro";
+import Code from "../icons/Code.astro";
+import Contact from "../icons/Contact.astro";
+import Home from "../icons/Home.astro";
+---
+
+<header class="flex justify-center items-center gap-y-3 p-4 w-[300px] xl:w-[300px] mx-auto my-4 fixed top-0 right-0 left-0 rounded-full bg-black border-[color:#2f6fe3] border-[2px] z-10">
   <nav class="flex flex-row gap-x-7 opacity-80 items-center justify-center">
-    <a href="#top" class="hover:text-[color:#2f6fe3] hover:font-extrabold">Inicio</a>
-    <a href="#experiencia" class="hover:text-[color:#2f6fe3] hover:font-extrabold">Experiencia</a>
-    <a href="#proyectos" class="hover:text-[color:#2f6fe3] hover:font-extrabold">Proyectos</a>
-    <a href="#contacto" class="hover:text-[color:#2f6fe3] hover:font-extrabold">Contactame</a>
+    <a href="#top" class="hover:text-[color:#2f6fe3] hover:font-extrabold"><Home class="size-7"/></a>
+    <a href="#experiencia" class="hover:text-[color:#2f6fe3] hover:font-extrabold"><Brief class="size-7"/></a>
+    <a href="#proyectos" class="hover:text-[color:#2f6fe3] hover:font-extrabold"><Code class="size-7"></a>
+    <a href="#contacto" class="hover:text-[color:#2f6fe3] hover:font-extrabold"><Contact class="size-7"></a>
   </nav>
 </header>
