@@ -21,7 +21,7 @@ import Layout from "../layouts/Layout.astro";
         <img src="https://media.licdn.com/dms/image/v2/D4E03AQF_IRChI6K6cA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1691372521820?e=1741824000&v=beta&t=2KE1MIDmaPoeVEA1oTTIzmJZS8DsvuQw9xwcm0soD9Q" alt="Foto de perfil de Jhonjandrys" class="mb-5 rounded-3xl size-72 md:size-80 xl:size-96 border-[2px] border-[color:#2f6fe3] ">
         </div>
       <h1
-        class="font-bold text-2xl md:text-4xl lg:text-5xl flex gap-x-4 items-center flex-row pb-5 lg:pb-7">
+        class="font-bold text-2xl md:text-4xl lg:text-5xl flex gap-x-8 items-center flex-row pb-5 lg:pb-7">
         Hola, soy Jhonjandrys <a
           href="https://www.linkedin.com/in/jhonjandrysdev/"
           target="_blank"
@@ -70,7 +70,7 @@ import Layout from "../layouts/Layout.astro";
       <SectionTitles titulo="Contactame">
         <Contact class="size-7" />
       </SectionTitles>
-      <FormMessage/>
+      <FormMessage client:only="react"/>
     </ContainerSection>
   </main>
 </Layout>

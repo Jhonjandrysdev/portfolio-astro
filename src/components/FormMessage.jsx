@@ -1,25 +1,21 @@
 import React from "react";
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster, toast } from "sonner";
 
 const ContactForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
-    toast.success("Correo enviado correctamente", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "dark",
-        transition: Bounce,
-      })
+
+    event.target.submit(); // Envío real del formulario después del toast
+
+    setTimeout(() => {
+    toast.success(
+      "Correo enviado correctamente");
+    });
   };
+
   return (
     <>
-    <ToastContainer/>
       <section>
         <div className="py-8 lg:py-14 px-4 mx-auto max-w-screen-md">
           <p class="mb-8 lg:mb-16 font-semibold text-center text-gray-500 dark:text-gray-400 sm:text-xl">
@@ -32,7 +28,12 @@ const ContactForm = () => {
             method="POST"
             className="space-y-8"
             onSubmit={handleSubmit}
-            >
+          >
+            <Toaster
+              richColors
+              expand={true}
+              position="top-right"
+            />
             <div>
               <label
                 htmlFor="name"
@@ -83,7 +84,7 @@ const ContactForm = () => {
             <button
               type="submit"
               className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[color:#2f6fe3] sm:w-fit hover:[background-color:#2815c3] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-              onClick={() => handleSubmit}>
+            >
               Enviar mensaje
             </button>
             <input type="hidden" name="_next" value="http://localhost:4321" />
