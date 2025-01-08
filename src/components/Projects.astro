@@ -7,6 +7,9 @@ import Tailwind from "../icons/Tailwind.astro";
 import ButtonPage from "./ButtonPage.astro";
 import Iconos from "../components/Iconos.astro";
 
+import X from '../assets/public/x.webp'
+import TODO from '../assets/public/todo.jpg'
+import CALCULADORA from '../assets/public/calculate.jpg'
 
 const TAGS = {
   REACT: {
@@ -38,7 +41,7 @@ const PROYECTOS = [
     Descripcion:
       "Desarrollo de un clon de la plataforma X (antes conocida como Twitter) como proyecto final del Bootcamp. Utilizando React, se implementó la funcionalidad para crear tweets, dar likes y mantener un conteo dinámico de interacciones en tiempo real. Este proyecto demuestra habilidades en el manejo de componentes y estados - VERSION WEB.",
     Link: "https://xbyjhon.netlify.app/",
-    Imagen: '/public/x.webp',
+    Imagen: '../public/x.webp',
     Github: "https://github.com/Jhonjandrysdev/TwitterClone",
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.FIREBASE, TAGS.TAILWIND],
   },
@@ -48,7 +51,7 @@ const PROYECTOS = [
     Descripcion:
       "Creación de una aplicación de lista de tareas (Todo List) utilizando React y JavaScript. Este proyecto sirvió como práctica para el uso de props, manejo del estado local, y la estructuración de componentes reutilizables, además de reforzar conceptos de gestión de datos y diseño interactivo.",
     Link: "https://todolistjhonjandrys.netlify.app/",
-    Imagen: "/public/todo.jpg",
+    Imagen: '../public/todo.jpg',
     Github: "https://github.com/Jhonjandrysdev/TodoListReact",
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   },
@@ -58,7 +61,7 @@ const PROYECTOS = [
     Descripcion:
       "Desarrollo de una calculadora interactiva como proyecto personal. Implementada con React y JSX, la calculadora incluye funcionalidades como operaciones básicas y diseño amigable para el usuario. Este proyecto refleja la capacidad de construir interfaces funcionales y útiles con fundamentos sólidos en JavaScript. - ",
     Link: "https://calculadorajhonjandrysdev.netlify.app/",
-    Imagen: "/public/calculate.jpg",
+    Imagen: '../public/calculate.jpg',
     Github: "https://github.com/Jhonjandrysdev/Calculadora",
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.CSS],
   }
@@ -89,10 +92,7 @@ const PROYECTOS = [
             <ButtonPage Link={project.Link} Title="Ir al Proyecto 💻" Target="_blank"/>
             <ButtonPage Link={project.Github} Title="Ir a Repositorio" Target="_blank"/>
           </div>
-      <img
-        src={project.Imagen}
-        alt={`Captura de pantalla del proyecto ${project.Imagen}`}
-      />
+          <img src={project.Imagen} alt={`Captura de pantalla del proyecto ${project.Titulo}`} loading="lazy" />
     </article>
   ))
 }
