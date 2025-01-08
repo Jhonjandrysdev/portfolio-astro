@@ -1,19 +1,31 @@
-import React from "react";
-
+import ModalMessage from '../components/ModalMessage'
 import { Toaster, toast } from "sonner";
-
+import { useState } from 'react';
 const ContactForm = () => {
+
+   const [isModalOpen, setModalOpen] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    event.target.submit(); // Envío real del formulario después del toast
+    const formData = new FormData(event.target);
 
-    setTimeout(() => {
-    toast.success(
-      "Correo enviado correctamente");
-    });
+    // Agregar los campos ocultos manualmente al FormData
+    formData.append("_next", "http://localhost:4321");
+    formData.append("_captcha", "false");
+
+     fetch('https://formsubmit.co/jhonjandrysramirez10@gmail.com', {method:"POST", body: formData}).then((response) => {
+         if (response.ok) {
+             setTimeout(() => {
+                 toast.success(
+                   "Correo enviado correctamente");
+                 });
+                event.target.reset()
+                setModalOpen(true);
+            } 
+     }).catch((err) => {
+         console.error(err)
+     })
   };
-
   return (
     <>
       <section>
@@ -24,8 +36,6 @@ const ContactForm = () => {
             asesoria en la idea de tu pagina web.
           </p>
           <form
-            action="https://formsubmit.co/jhonjandrysramirez10@gmail.com"
-            method="POST"
             className="space-y-8"
             onSubmit={handleSubmit}
           >
@@ -87,13 +97,11 @@ const ContactForm = () => {
             >
               Enviar mensaje
             </button>
-            <input type="hidden" name="_next" value="http://localhost:4321" />
-            <input type="hidden" name="_captcha" value="false" />
           </form>
         </div>
       </section>
+      <ModalMessage isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 };
-
 export default ContactForm;
