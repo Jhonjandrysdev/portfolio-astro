@@ -1,9 +1,8 @@
-import ModalMessage from '../components/ModalMessage'
+import ModalMessage from "../components/ModalMessage";
 import { Toaster, toast } from "sonner";
-import { useState } from 'react';
+import { useState } from "react";
 const ContactForm = () => {
-
-   const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -12,35 +11,34 @@ const ContactForm = () => {
     formData.append("_next", "https://jhonjandrysdev.netlify.app");
     formData.append("_captcha", "false");
 
-     fetch('https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46', {method:"POST", body: formData}).then((response) => {
-         if (response.ok) {
-             setTimeout(() => {
-                 toast.success(
-                   "Correo enviado correctamente");
-                   event.target.reset()
-                 });
-                setModalOpen(true);
-            } 
-     }).catch((err) => {
-         console.error(err)
-     })
+    fetch("https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          setTimeout(() => {
+            toast.success("Correo enviado correctamente");
+          });
+          event.target.reset();
+          setModalOpen(true);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
   return (
     <>
       <section>
         <div className="py-8 lg:py-14 px-4 mx-auto max-w-screen-md">
           <p class="mb-8 lg:mb-16 font-semibold text-center text-gray-400 sm:text-xl">
-No dudes en contactarme a través de este formulario o directamente a mi correo electrónico para discutir cualquier proyecto o recibir asesoría personalizada en el desarrollo de tu página web.
+            No dudes en contactarme a través de este formulario o directamente a
+            mi correo electrónico para discutir cualquier proyecto o recibir
+            asesoría personalizada en el desarrollo de tu página web.
           </p>
-          <form
-            className="space-y-8"
-            onSubmit={handleSubmit}
-          >
-            <Toaster
-              richColors
-              expand={true}
-              position="top-right"
-            />
+          <form className="space-y-8" onSubmit={handleSubmit}>
+            <Toaster richColors expand={true} position="top-right" />
             <div>
               <label
                 htmlFor="name"
