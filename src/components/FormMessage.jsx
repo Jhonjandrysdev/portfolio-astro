@@ -17,8 +17,8 @@ const ContactForm = () => {
              setTimeout(() => {
                  toast.success(
                    "Correo enviado correctamente");
+                   event.target.reset()
                  });
-                event.target.reset()
                 setModalOpen(true);
             } 
      }).catch((err) => {
