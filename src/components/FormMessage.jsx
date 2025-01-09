@@ -9,7 +9,7 @@ const ContactForm = () => {
 
     const formData = new FormData(event.target);
 
-    formData.append("_next", "https://jhonjandrysdev.netlify.app/");
+    formData.append("_next", "https://jhonjandrysdev.netlify.app");
     formData.append("_captcha", "false");
 
      fetch('https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46', {method:"POST", body: formData}).then((response) => {
