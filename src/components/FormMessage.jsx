@@ -12,7 +12,7 @@ const ContactForm = () => {
     formData.append("_next", "https://jhonjandrysdev.netlify.app/");
     formData.append("_captcha", "false");
 
-     fetch('https://formsubmit.co/jhonjandrysramirez10@gmail.com', {method:"POST", body: formData}).then((response) => {
+     fetch('https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46', {method:"POST", body: formData}).then((response) => {
          if (response.ok) {
              setTimeout(() => {
                  toast.success(
@@ -30,7 +30,7 @@ const ContactForm = () => {
       <section>
         <div className="py-8 lg:py-14 px-4 mx-auto max-w-screen-md">
           <p class="mb-8 lg:mb-16 font-semibold text-center text-gray-400 sm:text-xl">
-          No dudes en contactarme a través de este formulario o directamente a mi correo electrónico para discutir cualquier proyecto o recibir asesoría personalizada en el desarrollo de tu página web.
+No dudes en contactarme a través de este formulario o directamente a mi correo electrónico para discutir cualquier proyecto o recibir asesoría personalizada en el desarrollo de tu página web.
           </p>
           <form
             className="space-y-8"
