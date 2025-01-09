@@ -9,7 +9,6 @@ const ContactForm = () => {
 
     const formData = new FormData(event.target);
 
-    // Agregar los campos ocultos manualmente al FormData
     formData.append("_next", "http://localhost:4321");
     formData.append("_captcha", "false");
 
@@ -93,7 +92,7 @@ const ContactForm = () => {
             </div>
             <button
               type="submit"
-              className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-[color:#2f6fe3] sm:w-fit hover:[background-color:#2815c3] focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+              className="border rounded-full inline-flex gap-x-2 py-2 justify-center items-center px-3 text-sm font-medium hover:bg-gray-100 dark:[background-color:#2f6fe3] dark:border-white hover:font-bold dark:hover:[background-color:#2815c3] dark:text-white hover:scale-110 transition"
             >
               Enviar mensaje
             </button>
