@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[functions]
+  directory = ".netlify/functions"
+  
+[[redirects]]
+  from = "https://jhonjandrysdev.netlify.app/"
+  to = "https://jhonjandrysdev.netlify.app/"
+  status = 200
