@@ -15,24 +15,18 @@ const ContactForm = () => {
       method: "POST",
       body: formData,
     })
-      .then(async (response) => {
-        if (!response.ok) {
-          throw new Error('Error en la respuesta del servidor');
-        }
-        return response.json(); // Solo intentar parsear JSON si la respuesta es válida
-      })
-      .then((data) => {
-        if (data.message === 'Formulario enviado correctamente') {
-          toast.success("Correo enviado correctamente");
+      .then((response) => {
+        if (response.ok) {
+          setTimeout(() => {
+            toast.success("Correo enviado correctamente");
+          });
           event.target.reset();
           setModalOpen(true);
         }
       })
       .catch((err) => {
-        console.error('Error capturado:', err);
-        toast.error("Error al enviar el mensaje");
+        console.error(err);
       });
-    
   };
   return (
     <>
