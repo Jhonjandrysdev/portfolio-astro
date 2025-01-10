@@ -1,0 +1,21 @@
+[build]
+  command = "npm run build"  # Comando para compilar Astro
+  publish = "dist"           # Carpeta de salida (por defecto en Astro)
+  functions = "netlify/functions"  # Ruta de funciones serverless
+
+[functions]
+  node_bundler = "esbuild"  # Empaquetador compatible con `node-fetch`
+
+[[redirects]]
+  from = "/contact"
+  to = "/.netlify/functions/contactForm"
+  method = "POST"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "POST, GET, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
