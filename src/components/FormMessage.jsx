@@ -14,7 +14,6 @@ const ContactForm = () => {
     fetch("https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46", {
       method: "POST",
       body: formData,
-      mode : 'same-origin'
     })
       .then((response) => {
         if (response.ok) {
