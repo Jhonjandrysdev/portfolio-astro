@@ -1,7 +1,6 @@
 import ModalMessage from "../components/ModalMessage";
 import { Toaster, toast } from "sonner";
 import { useState } from "react";
-import Spinner from '../components/Spinner'
 const ContactForm = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const handleSubmit = (event) => {
