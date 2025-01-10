@@ -1,22 +1,36 @@
 import ModalMessage from "../components/ModalMessage";
 import { Toaster, toast } from "sonner";
 import { useState } from "react";
+import Spinner from '../components/Spinner'
 const ContactForm = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const message = formData.get('message');
+
+    if (name.length < 3) {
+      toast.error("El nombre debe tener al menos 3 caracteres.");
+      return;
+    }
+
+    if (message.length < 10) {
+      toast.error("El mensaje debe tener al menos 10 caracteres.");
+      return;
+    }
 
     formData.append("_next", "https://jhonjandrysdev.netlify.app");
     formData.append("_captcha", "false");
+    
 
     fetch("https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46", {
       method: "POST",
       body: formData,
     })
-      .then((response) => {
-        if (response.ok) {
+    .then((response) => {
+      if (response.ok) {
           setTimeout(() => {
             toast.success("Correo enviado correctamente");
           });
