@@ -4,91 +4,305 @@ import Firebase from "../icons/Firebase.astro";
 import Javascript from "../icons/Javascript.astro";
 import React from "../icons/React.astro";
 import Tailwind from "../icons/Tailwind.astro";
+import WordPress from "../icons/WordPress.astro";
+import NextJS from "../icons/NextJS.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import Docker from "../icons/Docker.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import AstroIcon from "../icons/AstroIcon.astro";
+import Elementor from "../icons/Elementor.astro";
+import Nuxt from "../icons/Nuxt.astro";
+import Prisma from "../icons/Prisma.astro";
+import DeepSeek from "../icons/DeepSeek.astro";
+import NestJS from "../icons/NestJS.astro";
 import ButtonPage from "./ButtonPage.astro";
-import Iconos from "../components/Iconos.astro";
 
 const TAGS = {
-  REACT: {
-    name: "React",
-    icon: React,
-  },
-  JAVASCRIPT: {
-    name: "JavaScript",
-    icon: Javascript,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    icon: Tailwind,
-  },
-  FIREBASE: {
-    name: "Firebase",
-    icon: Firebase,
-  },
-  CSS: {
-    name: 'CSS',
-  icon: Css
-  }
+  REACT: { name: "React", icon: React },
+  JAVASCRIPT: { name: "JavaScript", icon: Javascript },
+  TAILWIND: { name: "Tailwind CSS", icon: Tailwind },
+  FIREBASE: { name: "Firebase", icon: Firebase },
+  CSS: { name: "CSS", icon: Css },
+  WORDPRESS: { name: "WordPress", icon: WordPress },
+  NEXTJS: { name: "Next.js", icon: NextJS },
+  POSTGRESQL: { name: "PostgreSQL", icon: PostgreSQL },
+  DOCKER: { name: "Docker", icon: Docker },
+  TYPESCRIPT: { name: "TypeScript", icon: TypeScript },
+  ASTRO: { name: "Astro", icon: AstroIcon },
+  ELEMENTOR: { name: "Elementor", icon: Elementor },
+  NUXT: { name: "Nuxt", icon: Nuxt },
+  PRISMA: { name: "Prisma", icon: Prisma },
+  DEEPSEEK: { name: "DeepSeek AI", icon: DeepSeek },
+  NESTJS: { name: "NestJS", icon: NestJS },
 };
 
 const PROYECTOS = [
   {
+    Fecha: "2026 — En producción",
+    Titulo: "Social IA — Módulo de Publicaciones para EFICI",
+    Descripcion: "Módulo fullstack dentro de la plataforma EFICI que automatiza la gestión de redes sociales para pequeños y medianos comercios. Genera posts e historias con IA (DeepSeek) segmentados por audiencia y características del negocio, programa contenido con calendario editorial, conecta perfiles de Instagram, Facebook, Twitter y Google, y mide el rendimiento por publicación en tiempo real.",
+    Link: null,
+    Imagen: null,
+    Github: null,
+    Badge: "En producción",
+    BannerPosts: true,
+    Tags: [TAGS.NUXT, TAGS.NESTJS, TAGS.POSTGRESQL, TAGS.PRISMA, TAGS.DOCKER, TAGS.DEEPSEEK],
+  },
+  {
+    Fecha: "2026 — En desarrollo (Beta próximamente)",
+    Titulo: "DATAJEP — Sistema de Extracción de Audiencias con IA",
+    Descripcion:
+      "Sistema automatizado con Inteligencia Artificial para la extracción de información de audiencias de excombatientes ante la Jurisdicción Especial para la Paz (JEP) de Colombia. Procesa videos de comparecencias y extrae automáticamente datos clave como alias, cargos, municipios de operación, grupos armados y hechos relevantes del conflicto. Genera reportes en Excel con formato institucional JEP.",
+    Link: null,
+    Imagen: "/datajep.png",
+    Github: null,
+    Badge: "Beta próximamente",
+    Tags: [TAGS.ASTRO, TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.POSTGRESQL, TAGS.DOCKER, TAGS.TAILWIND],
+  },
+  {
+    Fecha: "2026",
+    Titulo: "Esfuerzo Inteligente — Landing Page de Curso",
+    Descripcion:
+      "Desarrollo de la página de ventas del curso 'Esfuerzo Inteligente' para The Savage Fork, orientado a la planificación de comidas y eficiencia en cocina. Implementado con WordPress, con enfoque en conversión, diseño limpio y experiencia de usuario optimizada para el público hispanohablante. Incluye módulos de testimonios, precios y llamadas a la acción.",
+    Link: "https://thesavagefork.com/esfuerzo-inteligente/",
+    Imagen: "/esfuerzo-inteligente.jpg",
+    Github: null,
+    Badge: null,
+    Tags: [TAGS.WORDPRESS, TAGS.ELEMENTOR],
+  },
+  {
     Fecha: "Octubre 2023",
     Titulo: "Clon de Twitter/X",
     Descripcion:
-      "Desarrollo de un clon funcional de la plataforma X (anteriormente conocida como Twitter) como proyecto final de un Bootcamp. Utilizando React, se implementaron funcionalidades clave, como la creación de publicaciones (tweets), sistema de 'likes' y un contador dinámico de interacciones en tiempo real. Este proyecto destaca habilidades en la gestión de componentes, estado de la aplicación - VERSION WEB.",
+      "Desarrollo de un clon funcional de la plataforma X (anteriormente conocida como Twitter) como proyecto final de un Bootcamp. Utilizando React, se implementaron funcionalidades clave, como la creación de publicaciones (tweets), sistema de 'likes' y un contador dinámico de interacciones en tiempo real.",
     Link: "https://xbyjhon.netlify.app/",
-    Imagen: '/x.webp',
+    Imagen: "/x.webp",
     Github: "https://github.com/Jhonjandrysdev/TwitterClone",
+    Badge: null,
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.FIREBASE, TAGS.TAILWIND],
   },
   {
     Fecha: "Septiembre 2023",
     Titulo: "Aplicación de Lista de Tareas (Todo List)",
     Descripcion:
-      "Desarrollo de una aplicación web para la gestión de tareas (Todo List) utilizando React y JavaScript. El proyecto se centró en la implementación de props, manejo del estado local y creación de componentes reutilizables. Además, reforzó conceptos fundamentales de gestión de datos y diseño interactivo.",
+      "Desarrollo de una aplicación web para la gestión de tareas utilizando React y JavaScript. El proyecto se centró en la implementación de props, manejo del estado local y creación de componentes reutilizables.",
     Link: "https://todolistjhonjandrys.netlify.app/",
-    Imagen: '/todo.jpg',
+    Imagen: "/todo.jpg",
     Github: "https://github.com/Jhonjandrysdev/TodoListReact",
+    Badge: null,
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.TAILWIND],
   },
   {
     Fecha: "Agosto 2023",
     Titulo: "Calculadora Web",
     Descripcion:
-      "Desarrollo de una calculadora web interactiva como proyecto personal. Implementada con React y JSX, incluye operaciones matemáticas básicas y un diseño centrado en la experiencia del usuario. Este proyecto demuestra habilidades en la creación de interfaces funcionales y aplicación de fundamentos sólidos en JavaScript.",
+      "Desarrollo de una calculadora web interactiva como proyecto personal. Implementada con React y JSX, incluye operaciones matemáticas básicas y un diseño centrado en la experiencia del usuario.",
     Link: "https://calculadorajhonjandrysdev.netlify.app/",
-    Imagen: '/calculate.jpg',
+    Imagen: "/calculate.jpg",
     Github: "https://github.com/Jhonjandrysdev/Calculadora",
+    Badge: null,
     Tags: [TAGS.JAVASCRIPT, TAGS.REACT, TAGS.CSS],
-  }
+  },
 ];
 ---
 
-{
-  PROYECTOS.map((project) => (
-    <article class="mb-10">
-      <h3 class="text-xl font-semibold text-white mb-4">
-        {project.Titulo}
-      </h3>
-      <p class="text-base font-semibold text-gray-400 text-justify mb-4">
-        {project.Descripcion}
-      </p>
-      <ul class="flex gap-x-4 gap-y-4 mb-4 items-center flex-wrap">
-        {project.Tags.map((tag) => (
-          <li>
-            <Iconos>
-            <span class=" flex items-center gap-3 text-sm py-1 px-1 rounded-full">
-              <tag.icon class="size-5" /> {tag.name}
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+  {
+    PROYECTOS.map((project) => (
+      <article class:list={[
+        "group relative flex flex-col gap-4 rounded-2xl border border-white/8 bg-white/[0.03] p-5 transition-all duration-300 hover:border-[#2f6fe3]/30 hover:bg-white/[0.05]",
+        project.BannerPosts ? "md:col-span-2" : ""
+      ]}>
+
+        <!-- Header -->
+        <div class="flex items-start justify-between gap-3 flex-wrap">
+          <div>
+            <span class="text-xs font-medium text-[#2f6fe3] uppercase tracking-widest">
+              {project.Fecha}
             </span>
-          </Iconos>
-          </li>
-        ))}
-      </ul>
-      <div class="flex  gap-x-4 mb-8 items-center">
-            <ButtonPage Link={project.Link} Title="Ir al Proyecto 💻" Target="_blank"/>
-            <ButtonPage Link={project.Github} Title="Ir a Repositorio" Target="_blank"/>
+            <h3 class:list={["font-bold text-white mt-1", project.BannerPosts ? "text-2xl" : "text-xl"]}>
+              {project.Titulo}
+            </h3>
           </div>
-          <img src={project.Imagen} alt={`Captura de pantalla del proyecto ${project.Titulo}`} loading="lazy" />
-    </article>
-  ))
-}
+          {project.Badge && (
+            <span class:list={[
+              "shrink-0 rounded-full border px-3 py-1 text-xs font-semibold",
+              project.Badge === "En producción"
+                ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-400"
+                : "border-[#2f6fe3]/50 bg-[#2f6fe3]/10 text-[#2f6fe3]"
+            ]}>
+              {project.Badge === "En producción" ? "✦ " : ""}{project.Badge}
+            </span>
+          )}
+        </div>
+
+        <!-- Descripción -->
+        <p class="text-sm leading-relaxed text-white/50">
+          {project.Descripcion}
+        </p>
+
+        <!-- Banner Social IA -->
+        {project.BannerPosts && (
+          <div class="rounded-xl overflow-hidden border border-white/8 bg-[#0a0a14]">
+
+            <!-- Topbar -->
+            <div class="flex items-center justify-between px-4 py-2.5 border-b border-white/8 bg-white/[0.015]">
+              <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                <span class="text-[11px] font-semibold text-white/40 tracking-wider uppercase">Social IA · EFICI</span>
+              </div>
+              <div class="flex items-center gap-3 text-[11px] text-white/25">
+                <span>Calendario</span>
+                <span class="text-white/15">|</span>
+                <span>Posts</span>
+                <span class="text-white/15">|</span>
+                <span class="text-emerald-400">245 publicados</span>
+              </div>
+            </div>
+
+            <!-- Grid único: 4 columnas en desktop -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2 p-3">
+
+              <!-- Dashboard: ocupa 2 cols y 2 filas -->
+              <div
+                class="col-span-2 row-span-2 rounded-lg overflow-hidden border border-white/8 cursor-zoom-in relative"
+                style="height: 280px;"
+                onclick="openLightbox('/social-efici.png','Dashboard Social IA EFICI')"
+              >
+                <img src="/social-efici.png" alt="Dashboard Social IA EFICI" class="w-full h-full object-cover object-top" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-2">
+                  <span class="text-[10px] text-white/70 font-semibold uppercase tracking-wider">Dashboard · Estadísticas</span>
+                </div>
+              </div>
+
+              <!-- Historia: 1 col, 2 filas -->
+              <div
+                class="row-span-2 rounded-lg overflow-hidden border border-white/8 cursor-zoom-in relative"
+                style="height: 280px;"
+                onclick="openLightbox('/social-historia.png','Historia generada con IA')"
+              >
+                <img src="/social-historia.png" alt="Historia generada con IA" class="w-full h-full object-cover object-top" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-2">
+                  <span class="text-[10px] text-white/70 font-semibold uppercase tracking-wider">Historia IA</span>
+                </div>
+              </div>
+
+              <!-- Posts: apilados en 1 col -->
+              <div
+                class="rounded-lg overflow-hidden border border-white/8 cursor-zoom-in relative"
+                style="height: 134px;"
+                onclick="openLightbox('/social-exquiste.png','Posts jdev.efici')"
+              >
+                <img src="/social-exquiste.png" alt="Posts jdev.efici" class="w-full h-full object-cover object-top" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1">
+                  <span class="text-[9px] text-white/70 font-semibold">jdev.efici</span>
+                </div>
+              </div>
+              <div
+                class="rounded-lg overflow-hidden border border-white/8 cursor-zoom-in relative"
+                style="height: 134px;"
+                onclick="openLightbox('/social-cootrasan.png','Posts cootrasan.dev.efici')"
+              >
+                <img src="/social-cootrasan.png" alt="Posts cootrasan.dev.efici" class="w-full h-full object-cover object-top" />
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1">
+                  <span class="text-[9px] text-white/70 font-semibold">cootrasan.dev.efici</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Métricas en una sola barra -->
+            <div class="grid grid-cols-3 border-t border-white/8">
+              <div class="flex items-center justify-center gap-3 py-3 border-r border-white/8">
+                <span class="text-xl font-bold text-white">2+</span>
+                <span class="text-[10px] text-white/35 uppercase tracking-wider">Comercios</span>
+              </div>
+              <div class="flex items-center justify-center gap-3 py-3 border-r border-white/8">
+                <span class="text-xl font-bold text-emerald-400">245</span>
+                <span class="text-[10px] text-white/35 uppercase tracking-wider">Posts publicados</span>
+              </div>
+              <div class="flex items-center justify-center gap-3 py-3">
+                <span class="text-xl font-bold text-[#2f6fe3]">IA</span>
+                <span class="text-[10px] text-white/35 uppercase tracking-wider">Contenido generado</span>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <!-- Imagen normal -->
+        {project.Imagen && (
+          <div
+            class="overflow-hidden rounded-xl border border-white/10 cursor-zoom-in"
+            onclick={`openLightbox('${project.Imagen}', '${project.Titulo}')`}
+          >
+            <img
+              src={project.Imagen}
+              alt={`Captura de pantalla del proyecto ${project.Titulo}`}
+              loading="lazy"
+              class="w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            />
+          </div>
+        )}
+
+        <!-- Tags -->
+        <ul class="flex flex-wrap gap-2">
+          {project.Tags.map((tag) => (
+            <li>
+              <span class="flex items-center gap-2 rounded-lg border border-white/8 bg-white/5 px-2.5 py-1 text-xs font-medium text-white/60">
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <!-- Buttons -->
+        {(project.Link || project.Github) && (
+          <div class="flex gap-3 flex-wrap">
+            {project.Link && (
+              <ButtonPage Link={project.Link} Title="Ver Proyecto" Target="_blank" variant="primary" />
+            )}
+            {project.Github && (
+              <ButtonPage Link={project.Github} Title="Ver Repositorio" Target="_blank" variant="secondary" />
+            )}
+          </div>
+        )}
+      </article>
+    ))
+  }
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4" onclick="closeLightbox()">
+  <button class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors" onclick="closeLightbox()">
+    <svg class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-xl object-contain shadow-2xl" onclick="(function(e){e.stopPropagation()})(arguments[0])" />
+</div>
+
+<script>
+  function openLightbox(src: string, alt: string) {
+    const lb = document.getElementById('lightbox') as HTMLElement;
+    const img = document.getElementById('lightbox-img') as HTMLImageElement;
+    img.src = src;
+    img.alt = alt;
+    lb.classList.remove('hidden');
+    lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    const lb = document.getElementById('lightbox') as HTMLElement;
+    lb.classList.add('hidden');
+    lb.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  (window as any).openLightbox = openLightbox;
+  (window as any).closeLightbox = closeLightbox;
+</script>

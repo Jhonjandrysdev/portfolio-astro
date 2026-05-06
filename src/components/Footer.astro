@@ -1,37 +1,32 @@
 ---
-import Brief from "../icons/Brief.astro";
-import Code from "../icons/Code.astro";
-import Contact from "../icons/Contact.astro";
+import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
 ---
-<footer
-  class="rounded-lg shadow m-4 bg-white/15 w-full xl:w-[1120px] mx-auto mb-10">
-  <div
-    class="w-full mx-auto max-w-screen-xl sm:flex sm:items-center sm:justify-center md:flex md:items-center md:justify-between lg:justify-between p-4 gap-5">
-    <span class="text-sm  sm:text-center text-gray-400 flex justify-center">
-      © 2025 
-      <a href="#top" class="hover:underline ml-1 mr-1">Jhonjandrys Ramirez™</a> 
-      <span>All rights reserved.</span>
-  </span>
-    <ul
-      class="flex flex-wrap justify-center gap-5  m-3 items-center mt-3 text-sm font-medium text-gray-400">
-      <li>
-        <a
-          href="#experiencia"
-          class="hover:text-[color:#2f6fe3] hover:font-extrabold"
-          ><Brief class="size-7" /></a>
-        <li>
-          <a
-            href="#proyectos"
-            class="hover:text-[color:#2f6fe3] hover:font-extrabold"
-            ><Code class="size-7" /></a>
-          <li>
-            <a
-              href="#contacto"
-              class="hover:text-[color:#2f6fe3] hover:font-extrabold"
-              ><Contact class="size-7" /></a>
-          </li>
-        </li>
-      </li>
-    </ul>
+
+<footer class="w-full max-w-3xl mx-auto px-4 pb-10 mt-4">
+  <div class="rounded-2xl border border-white/8 bg-white/[0.03] px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm text-white/40">
+      © 2025 <span class="text-white/70 font-medium">Jhonjandrys Ramirez</span>. Todos los derechos reservados.
+    </p>
+    <div class="flex items-center gap-3">
+      <a
+        href="https://www.linkedin.com/in/jhonjandrysdev/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-xl bg-white/5 border border-white/8 hover:border-[#2f6fe3]/40 hover:bg-[#2f6fe3]/10 text-white/50 hover:text-[#2f6fe3] transition-all duration-200"
+        aria-label="LinkedIn"
+      >
+        <Linkedin class="size-4" />
+      </a>
+      <a
+        href="https://github.com/Jhonjandrysdev"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-xl bg-white/5 border border-white/8 hover:border-[#2f6fe3]/40 hover:bg-[#2f6fe3]/10 text-white/50 hover:text-[#2f6fe3] transition-all duration-200"
+        aria-label="GitHub"
+      >
+        <Github class="size-4" />
+      </a>
+    </div>
   </div>
 </footer>

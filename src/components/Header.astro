@@ -3,35 +3,43 @@ import Brief from "../icons/Brief.astro";
 import Code from "../icons/Code.astro";
 import Contact from "../icons/Contact.astro";
 import Home from "../icons/Home.astro";
+
+const navItems = [
+  { href: "#top", icon: Home, label: "Inicio" },
+  { href: "#experiencia", icon: Brief, label: "Experiencia" },
+  { href: "#proyectos", icon: Code, label: "Proyectos" },
+  { href: "#contacto", icon: Contact, label: "Contacto" },
+];
 ---
 
-<header class="flex justify-center items-center gap-y-3 p-4 w-[300px] xl:w-[300px] mx-auto my-4 fixed top-0 right-0 left-0 rounded-full bg-black border-[color:#2f6fe3] border-[2px] z-10">
-  <nav class="flex flex-row gap-x-7 opacity-80 items-center justify-center">
-    <a href="#top" class="icon-link"><Home class="size-7"/></a>
-    <a href="#experiencia" class="icon-link"><Brief class="size-7"/></a>
-    <a href="#proyectos" class="icon-link"><Code class="size-7"/></a>
-    <a href="#contacto" class="icon-link"><Contact class="size-7"/></a>
+<header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+  <nav class="flex items-center gap-1 px-3 py-2 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+    {navItems.map(({ href, icon: Icon, label }) => (
+      <a
+        href={href}
+        class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-white/60 hover:text-white transition-all duration-200 hover:bg-white/8"
+        aria-label={label}
+      >
+        <Icon class="size-4" />
+        <span class="hidden sm:inline">{label}</span>
+        <span class="tooltip absolute -bottom-10 left-1/2 -translate-x-1/2 sm:hidden bg-black/90 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/10">
+          {label}
+        </span>
+      </a>
+    ))}
   </nav>
 </header>
 
 <style>
-.icon-link svg {
-    stroke: white;
-    transition: stroke 0.3s ease;
-}
-
-.icon-link:hover svg {
+  .nav-link svg {
+    stroke: currentColor;
+    transition: all 0.2s;
+  }
+  .nav-link:hover {
+    color: white;
+  }
+  .nav-link:hover svg {
     stroke: #2f6fe3;
-}
-
-@media (prefers-color-scheme: dark) {
-    .icon-link svg {
-        stroke: white;
-        transition: stroke 0.3s ease;
-    }
-
-    .icon-link:hover svg {
-        stroke: #2f6fe3
-    }
-}
+    filter: drop-shadow(0 0 6px rgba(47, 111, 227, 0.6));
+  }
 </style>

@@ -1,19 +1,31 @@
 ---
 import ElementoExperiencia from "./ElementoExperiencia.astro"
 
-const experiencia = [{
-    Fecha: "Octubre 2023 - Actualidad",
-    Titulo: "Desarrollador Freelance 💻",
-    Descripcion: "Desde octubre de 2023, me he dedicado al desarrollo de aplicaciones web modernas e interactivas como freelance. Durante este tiempo, he participado en proyectos destacados, como la creación de un clon de Twitter/X, utilizando tecnologías como React, JavaScript, HTML, Tailwind y CSS. Mi enfoque se centra en crear soluciones eficientes y funcionales, asegurando experiencias de usuario intuitivas y atractivas. Siempre busco superar las expectativas mediante un diseño limpio, un código escalable y la implementación de las mejores prácticas.",
+const experiencia = [
+  {
+    Fecha: "Noviembre 2025 - Actualidad",
+    Titulo: "Desarrollador Fullstack",
+    Empresa: "EFICI SAS",
+    EmpresaLink: "https://efici.co/",
+    Descripcion: "Desarrollo de módulos fullstack para EFICI, plataforma SaaS para gestión de pequeños y medianos comercios. Lidero el desarrollo del módulo Social IA: automatización de publicaciones en redes sociales con IA, calendario editorial, métricas de rendimiento por perfil y generación de contenido segmentado por audiencia.",
     Link: "#proyectos"
-}];
+  },
+  {
+    Fecha: "Octubre 2023 - Noviembre 2025",
+    Titulo: "Desarrollador Frontend Freelance",
+    Empresa: null,
+    EmpresaLink: null,
+    Descripcion: "Desarrollo de aplicaciones web modernas e interactivas como freelance durante más de 2 años. Participé en proyectos destacados como landing pages, clones de plataformas y herramientas de productividad, utilizando React, JavaScript, Tailwind CSS y Firebase. Enfoque en experiencias de usuario intuitivas y código escalable.",
+    Link: "#proyectos"
+  }
+];
 ---
 
-<ol class="items-center sm:flex">
+<ol class="flex flex-col gap-4">
     {
-        experiencia.map((experiencia) => (
-            <li class="relative mb-6 sm:mb-0">
-                <ElementoExperiencia {...experiencia}/>
+        experiencia.map((exp) => (
+            <li class="relative">
+                <ElementoExperiencia {...exp}/>
             </li>
         ))
     }

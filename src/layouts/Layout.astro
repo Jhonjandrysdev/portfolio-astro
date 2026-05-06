@@ -8,43 +8,66 @@ import "@fontsource-variable/onest";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portafolio de Jhonjandrys Ramirez, desarrollador y programador web con más de un año de experiencia. Contrátalo para crear tu página web o aplicación." />
-    <meta name="keywords" content="Desarrollador Web, Programador Web, Jhonjandrys Ramirez, Portafolio Web, Desarrollo de Aplicaciones" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="Portafolio de Jhonjandrys Ramirez, desarrollador Fullstack con más de 2 años de experiencia. Actualmente en EFICI SAS." />
+    <meta name="keywords" content="Desarrollador Web, Programador Web, Jhonjandrys Ramirez, Portafolio Web, Fullstack, React, Astro" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/icon1.svg" />
-    <link rel="icon" sizes="180x180" href="/icon1.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icon1.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icon1.svg">
     <meta name="generator" content={Astro.generator} />
-    <title>Jhonjandrys Ramirez | Desarrollador y Programador Web Profesional</title>
+    <title>Jhonjandrys Ramirez | Desarrollador Fullstack</title>
   </head>
   <body>
-    <div
-      class="absolute inset-0 -z-10 min-h-screen w-full bg-[radial-gradient(100%_100%_at_50%_90%,#000_40%,#2f6fe3_100%)]">
-      <Header />
-      <slot />
-      <Footer/>
-    </div>
+    <Header />
+    <slot />
+    <Footer />
   </body>
 </html>
+
 <style is:global>
   :root {
-    color-scheme: light dark;
-    /*Se le esta indicando al navegador que colores debe soportar*/
+    --color-blue: #2f6fe3;
+    --color-blue-dark: #1a4db5;
+    --color-bg: #06060f;
+    --color-card: rgba(255, 255, 255, 0.04);
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-text-muted: #94a3b8;
   }
+
   html {
-    background-color: #050505;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
     scroll-behavior: smooth;
+    background-color: var(--color-bg);
   }
+
   body {
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     font-family: "Onest Variable", sans-serif;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(47, 111, 227, 0.15) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(47, 111, 227, 0.08) 0%, transparent 60%),
+      var(--color-bg);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
   }
+
   @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+    html { scroll-behavior: auto; }
+  }
+
+  ::selection {
+    background: rgba(47, 111, 227, 0.4);
+    color: white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-blue-dark);
+    border-radius: 3px;
   }
 </style>

@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npx astro *)",
+      "Bash(node_modules/.bin/astro dev *)",
+      "Bash(npm install *)",
+      "Bash(find /Users/jhonjandrys/Desktop -name \"*DATAJEP*\" -o -name \"*datajep*\" 2>/dev/null | head -20)",
+      "Read(//Users/jhonjandrys/Desktop/**)",
+      "WebFetch(domain:thesavagefork.com)",
+      "Bash(curl -L \"https://thesavagefork.com/wp-content/uploads/2026/03/IMG_1948-2048x1418.jpeg\" -o /Users/jhonjandrys/Desktop/portfolio-astro/public/esfuerzo-inteligente.jpg)",
+      "WebFetch(domain:efici.co)",
+      "Bash(find /tmp /var/folders -name \"*.jpg\" -o -name \"*.png\" -o -name \"*.jpeg\" 2>/dev/null | grep -i \"screenshot\\\\|image\\\\|upload\\\\|paste\\\\|clip\" | head -20)",
+      "Read(//private/tmp/**)",
+      "Read(//Users/jhonjandrys/Downloads/**)",
+      "Bash(sort -t/ -k6 -r)",
+      "Read(//private/var/folders/**)",
+      "Bash(xargs ls -lt)"
+    ]
+  }
+}
