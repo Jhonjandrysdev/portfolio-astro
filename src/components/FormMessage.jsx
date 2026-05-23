@@ -23,7 +23,7 @@ const ContactForm = () => {
     formData.append("_next", "https://jhonjandrysdev.netlify.app");
     formData.append("_captcha", "false");
 
-    fetch("https://formsubmit.co/cd3d005e4ae3085579e67b3347577b46", {
+    fetch("https://formsubmit.co/jhonjandrysramirez10@gmail.com", {
       method: "POST",
       body: formData,
     })
@@ -34,7 +34,10 @@ const ContactForm = () => {
           setModalOpen(true);
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => {
+        console.error(err);
+        toast.error("Hubo un error al enviar el mensaje. Intenta de nuevo.");
+      });
   };
 
   const inputClass =
