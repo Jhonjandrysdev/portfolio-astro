@@ -1,0 +1,41 @@
+---
+// Cierre con llamado a la acción + formulario (estilo CTA 3 de 21st.dev).
+import QuoteForm from "./QuoteForm.jsx";
+import { CTA_HREF, CTA_IS_EXTERNAL, SOCIAL } from "../../data/site.js";
+---
+
+<section id="contacto" class="relative w-full scroll-mt-24 px-4 py-20">
+  <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-[#2f6fe3]/30 bg-gradient-to-br from-[#1a3a8a]/50 via-[#0b1230] to-[#06060f] p-8 sm:p-12">
+    <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#2f6fe3]/30 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-[#2f6fe3]/15 blur-3xl"></div>
+
+    <div class="relative grid gap-10 md:grid-cols-2 md:items-start">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">¿Tienes un proyecto en mente?</h2>
+        <p class="mt-4 text-base text-white/65 sm:text-lg">
+          Cuéntame qué necesitas por WhatsApp y te envío una propuesta sin compromiso. Respondo el mismo día.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          {CTA_IS_EXTERNAL && (
+            <a
+              href={CTA_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-6 py-4 font-semibold text-[#062b14] transition-transform hover:-translate-y-0.5"
+            >
+              Escríbeme por WhatsApp
+            </a>
+          )}
+
+        </div>
+        <div class="mt-8 flex gap-4 text-sm text-white/50">
+          <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a>
+          <a href={SOCIAL.github} target="_blank" rel="noopener noreferrer" class="hover:text-white">GitHub</a>
+        </div>
+      </div>
+      <div>
+        <QuoteForm client:visible />
+      </div>
+    </div>
+  </div>
+</section>

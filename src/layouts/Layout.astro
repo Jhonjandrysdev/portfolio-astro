@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import FloatingCta from "../components/landing/FloatingCta.astro";
 import "@fontsource-variable/onest";
 ---
 
@@ -8,17 +9,50 @@ import "@fontsource-variable/onest";
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Portafolio de Jhonjandrys Ramirez, desarrollador Fullstack con más de 2 años de experiencia. Actualmente en EFICI SAS." />
-    <meta name="keywords" content="Desarrollador Web, Programador Web, Jhonjandrys Ramirez, Portafolio Web, Fullstack, React, Astro" />
+    <meta name="description" content="Desarrollador web en Colombia. Diseño y construyo landing pages, sitios web para negocios, WordPress y aplicaciones con IA que convierten visitas en clientes." />
+    <meta name="keywords" content="desarrollador web Colombia, diseño de páginas web, landing pages, sitios web para negocios, WordPress, Elementor, Astro, React, Jhonjandrys Ramirez" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#06060f" />
     <link rel="icon" type="image/svg+xml" href="/icon1.svg" />
+    <link rel="canonical" href="https://jhonjandrysdev.netlify.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:title" content="Jhonjandrys Ramirez | Sitios web que convierten visitas en clientes" />
+    <meta property="og:description" content="Landing pages, sitios para negocios, WordPress y aplicaciones con IA. Cotiza tu proyecto." />
+    <meta property="og:url" content="https://jhonjandrysdev.netlify.app/" />
+    <meta property="og:image" content="https://jhonjandrysdev.netlify.app/esfuerzo-inteligente.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="generator" content={Astro.generator} />
-    <title>Jhonjandrys Ramirez | Desarrollador Fullstack</title>
+    <title>Jhonjandrys Ramirez | Desarrollador web: sitios que convierten visitas en clientes</title>
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      name: "Jhonjandrys Ramirez · Desarrollo web",
+      url: "https://jhonjandrysdev.netlify.app/",
+      image: "https://jhonjandrysdev.netlify.app/perfil.jpg",
+      areaServed: "CO",
+      sameAs: ["https://www.linkedin.com/in/jhonjandrysdev/", "https://github.com/Jhonjandrysdev"],
+    })} />
   </head>
   <body>
     <Header />
     <slot />
     <Footer />
+    <FloatingCta />
+    <script>
+      // Aparición suave de secciones al hacer scroll
+      const els = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        els.forEach((el) => el.classList.add("is-visible"));
+      } else {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add("is-visible"); io.unobserve(e.target); }
+          });
+        }, { rootMargin: "0px 0px -10% 0px" });
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
   </body>
 </html>
 
@@ -55,6 +89,19 @@ import "@fontsource-variable/onest";
     html { scroll-behavior: auto; }
   }
 
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
   ::selection {
     background: rgba(47, 111, 227, 0.4);
     color: white;
@@ -69,5 +116,37 @@ import "@fontsource-variable/onest";
   ::-webkit-scrollbar-thumb {
     background: var(--color-blue-dark);
     border-radius: 3px;
+  }
+</style>
+
+<style is:global>
+  /* Borde con degradado giratorio para la foto del hero */
+  @property --ring-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .hero-ring {
+    background: conic-gradient(from var(--ring-angle), #2f6fe3, #8ab4ff, #25d3a0, #2f6fe3 60%, rgba(255,255,255,0.08) 75%, #2f6fe3);
+    animation: ring-spin 6s linear infinite;
+  }
+  @keyframes ring-spin {
+    to { --ring-angle: 360deg; }
+  }
+  /* Brillo que cruza el botón principal */
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%) skewX(-20deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    animation: shine 3.5s ease-in-out infinite;
+  }
+  @keyframes shine {
+    0%, 60% { transform: translateX(-120%) skewX(-20deg); }
+    100% { transform: translateX(220%) skewX(-20deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-ring, .shine::after { animation: none; }
   }
 </style>
