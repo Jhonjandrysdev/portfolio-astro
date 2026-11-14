@@ -1,0 +1,32 @@
+---
+// Testimonio centrado (estilo Centered Testimonial de 21st.dev).
+// Cuando tengas la cita real de The Savage Fork, ponla en `quote` y el nombre/cargo en `author`.
+const quote = "";
+const author = "";
+---
+
+<section class="relative w-full px-4 py-20" aria-label="Testimonio">
+  <figure class="reveal relative mx-auto max-w-3xl overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.01] px-6 py-12 text-center sm:px-12">
+    <div class="pointer-events-none absolute -top-24 left-1/2 h-48 w-72 -translate-x-1/2 rounded-full bg-[#2f6fe3]/25 blur-3xl"></div>
+    <svg viewBox="0 0 24 24" class="relative mx-auto h-10 w-10 text-[#2f6fe3]" fill="currentColor" aria-hidden="true">
+      <path d="M7.2 6C4.9 7.2 3.5 9.4 3.5 12.3V18h6v-6H6.6c0-1.8.9-3.1 2.6-3.9L7.2 6Zm10 0c-2.3 1.2-3.7 3.4-3.7 6.3V18h6v-6h-2.9c0-1.8.9-3.1 2.6-3.9L17.2 6Z" />
+    </svg>
+    {quote ? (
+      <>
+        <blockquote class="relative mt-6 text-xl font-medium leading-relaxed text-white sm:text-2xl">“{quote}”</blockquote>
+        <figcaption class="mt-6 text-sm text-white/60">{author}</figcaption>
+      </>
+    ) : (
+      <>
+        <p class="relative mt-6 text-xl font-medium leading-relaxed text-white sm:text-2xl">
+          The Savage Fork confió en mí para crear la página de ventas de su curso <span class="text-[#8ab4ff]">Esfuerzo Inteligente</span>.
+        </p>
+        <figcaption class="mt-6 text-sm text-white/60">
+          <a href="https://thesavagefork.com/esfuerzo-inteligente/" target="_blank" rel="noopener noreferrer" class="underline decoration-white/30 underline-offset-4 hover:text-white">
+            Míralo en vivo en thesavagefork.com
+          </a>
+        </figcaption>
+      </>
+    )}
+  </figure>
+</section>

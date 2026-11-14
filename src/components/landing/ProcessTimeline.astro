@@ -1,0 +1,25 @@
+---
+// Proceso de trabajo en 4 pasos (estilo How It Works Timeline de 21st.dev).
+import SectionHeading from "./SectionHeading.astro";
+import { PROCESS } from "../../data/site.js";
+---
+
+<section id="proceso" class="relative w-full scroll-mt-24 px-4 py-20">
+  <div class="mx-auto max-w-5xl">
+    <SectionHeading eyebrow="Cómo trabajo" title="De la idea a tu sitio publicado en 4 pasos" />
+    <ol class="relative grid gap-6 md:grid-cols-4">
+      <div class="pointer-events-none absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-transparent via-[#2f6fe3]/50 to-transparent md:block"></div>
+      {PROCESS.map((step, i) => (
+        <li class="reveal relative flex gap-4 md:flex-col" style={`transition-delay:${i * 100}ms`}>
+          <span class="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[#2f6fe3]/50 bg-[#0b0f24] text-lg font-bold text-[#8ab4ff] shadow-[0_0_24px_rgba(47,111,227,0.35)]">
+            {i + 1}
+          </span>
+          <div>
+            <h3 class="text-lg font-bold text-white">{step.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-white/55">{step.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>

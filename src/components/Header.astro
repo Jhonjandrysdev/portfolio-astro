@@ -1,45 +1,32 @@
 ---
-import Brief from "../icons/Brief.astro";
-import Code from "../icons/Code.astro";
-import Contact from "../icons/Contact.astro";
-import Home from "../icons/Home.astro";
+import { CTA_HREF, CTA_IS_EXTERNAL } from "../data/site.js";
 
 const navItems = [
-  { href: "#top", icon: Home, label: "Inicio" },
-  { href: "#experiencia", icon: Brief, label: "Experiencia" },
-  { href: "#proyectos", icon: Code, label: "Proyectos" },
-  { href: "#contacto", icon: Contact, label: "Contacto" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#proceso", label: "Proceso" },
+  { href: "#faq", label: "Preguntas" },
 ];
 ---
 
 <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-  <nav class="flex items-center gap-1 px-3 py-2 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-    {navItems.map(({ href, icon: Icon, label }) => (
-      <a
-        href={href}
-        class="nav-link group relative flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium text-white/60 hover:text-white transition-all duration-200 hover:bg-white/8"
-        aria-label={label}
-      >
-        <Icon class="size-4" />
-        <span class="hidden sm:inline">{label}</span>
-        <span class="tooltip absolute -bottom-10 left-1/2 -translate-x-1/2 sm:hidden bg-black/90 text-white text-xs px-2 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-white/10">
+  <nav class="flex w-full max-w-3xl items-center justify-between gap-2 rounded-2xl border border-white/10 bg-black/60 px-3 py-2 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl" aria-label="Principal">
+    <a href="#top" class="px-2 text-sm font-bold tracking-tight text-white">
+      jhonjandrys<span class="text-[#2f6fe3]">.dev</span>
+    </a>
+    <div class="hidden items-center gap-1 md:flex">
+      {navItems.map(({ href, label }) => (
+        <a href={href} class="rounded-xl px-3 py-2 text-sm font-medium text-white/60 transition-colors hover:bg-white/5 hover:text-white">
           {label}
-        </span>
-      </a>
-    ))}
+        </a>
+      ))}
+    </div>
+    <a
+      href={CTA_HREF}
+      {...(CTA_IS_EXTERNAL ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      class="rounded-xl bg-[#2f6fe3] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#3d7cf0]"
+    >
+      Cotizar
+    </a>
   </nav>
 </header>
-
-<style>
-  .nav-link svg {
-    stroke: currentColor;
-    transition: all 0.2s;
-  }
-  .nav-link:hover {
-    color: white;
-  }
-  .nav-link:hover svg {
-    stroke: #2f6fe3;
-    filter: drop-shadow(0 0 6px rgba(47, 111, 227, 0.6));
-  }
-</style>

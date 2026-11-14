@@ -1,0 +1,74 @@
+---
+// Franja "Han confiado en mí" + tecnologías en movimiento continuo (estilo Infinite Slider de 21st.dev).
+import React from "../../icons/React.astro";
+import AstroIcon from "../../icons/AstroIcon.astro";
+import NextJS from "../../icons/NextJS.astro";
+import WordPress from "../../icons/WordPress.astro";
+import Elementor from "../../icons/Elementor.astro";
+import Tailwind from "../../icons/Tailwind.astro";
+import TypeScript from "../../icons/TypeScript.astro";
+import Nuxt from "../../icons/Nuxt.astro";
+import NestJS from "../../icons/NestJS.astro";
+import PostgreSQL from "../../icons/PostgreSQL.astro";
+import Docker from "../../icons/Docker.astro";
+import Firebase from "../../icons/Firebase.astro";
+
+const tech = [
+  { name: "React", icon: React },
+  { name: "Astro", icon: AstroIcon },
+  { name: "Next.js", icon: NextJS },
+  { name: "WordPress", icon: WordPress },
+  { name: "Elementor", icon: Elementor },
+  { name: "Tailwind CSS", icon: Tailwind },
+  { name: "TypeScript", icon: TypeScript },
+  { name: "Nuxt", icon: Nuxt },
+  { name: "NestJS", icon: NestJS },
+  { name: "PostgreSQL", icon: PostgreSQL },
+  { name: "Docker", icon: Docker },
+  { name: "Firebase", icon: Firebase },
+];
+const clients = [
+  { name: "The Savage Fork", href: "https://thesavagefork.com/esfuerzo-inteligente/" },
+  { name: "EFICI", href: "https://efici.co/" },
+];
+---
+
+<section class="relative w-full px-4 py-14" aria-label="Clientes y tecnologías">
+  <div class="mx-auto max-w-5xl">
+    <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-white/40">Han confiado en mí</p>
+    <div class="mt-5 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+      {clients.map((c) => (
+        <a href={c.href} target="_blank" rel="noopener noreferrer" class="text-2xl font-bold tracking-tight text-white/70 transition-colors hover:text-white sm:text-3xl">
+          {c.name}
+        </a>
+      ))}
+    </div>
+
+    <div class="marquee group relative mt-12 overflow-hidden" style="mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);">
+      <ul class="marquee-track flex w-max gap-4">
+        {[...tech, ...tech].map(({ name, icon: Icon }, i) => (
+          <li class="flex shrink-0 items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-white/70" aria-hidden={i >= tech.length ? "true" : undefined}>
+            <Icon class="size-5" />
+            {name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee-track {
+    animation: marquee 40s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 0.5rem)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; flex-wrap: wrap; justify-content: center; width: 100%; }
+  }
+</style>
