@@ -1,6 +1,6 @@
 ---
 // Cierre con llamado a la acción + formulario (estilo CTA 3 de 21st.dev).
-import FormMessage from "../FormMessage";
+import QuoteForm from "./QuoteForm.jsx";
 import { CTA_HREF, CTA_IS_EXTERNAL, SOCIAL } from "../../data/site.js";
 ---
 
@@ -13,7 +13,7 @@ import { CTA_HREF, CTA_IS_EXTERNAL, SOCIAL } from "../../data/site.js";
       <div>
         <h2 class="text-3xl font-bold tracking-tight text-white sm:text-5xl">¿Tienes un proyecto en mente?</h2>
         <p class="mt-4 text-base text-white/65 sm:text-lg">
-          Cuéntame qué necesitas y te envío una propuesta sin compromiso. Respondo el mismo día.
+          Cuéntame qué necesitas por WhatsApp y te envío una propuesta sin compromiso. Respondo el mismo día.
         </p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
           {CTA_IS_EXTERNAL && (
@@ -26,12 +26,7 @@ import { CTA_HREF, CTA_IS_EXTERNAL, SOCIAL } from "../../data/site.js";
               Escríbeme por WhatsApp
             </a>
           )}
-          <a
-            href={`mailto:${SOCIAL.email}?subject=${encodeURIComponent("Quiero cotizar un sitio web")}`}
-            class="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 px-6 py-4 font-semibold text-white transition-all hover:bg-white/10"
-          >
-            Enviar un correo
-          </a>
+
         </div>
         <div class="mt-8 flex gap-4 text-sm text-white/50">
           <a href={SOCIAL.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-white">LinkedIn</a>
@@ -39,7 +34,7 @@ import { CTA_HREF, CTA_IS_EXTERNAL, SOCIAL } from "../../data/site.js";
         </div>
       </div>
       <div>
-        <FormMessage client:only="react" />
+        <QuoteForm client:visible />
       </div>
     </div>
   </div>

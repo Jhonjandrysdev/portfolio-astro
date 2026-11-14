@@ -2,7 +2,7 @@
 
 // Número de WhatsApp en formato internacional sin "+" ni espacios (ej: "573001234567").
 // Mientras esté vacío, los botones de "Cotiza tu proyecto" llevan al formulario de contacto.
-export const WHATSAPP_NUMBER = "";
+export const WHATSAPP_NUMBER = "573022825766";
 
 const WHATSAPP_TEXT = "Hola Jhonjandrys, vi tu portafolio y quiero cotizar un sitio web.";
 

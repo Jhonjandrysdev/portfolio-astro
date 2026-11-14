@@ -118,3 +118,35 @@ import "@fontsource-variable/onest";
     border-radius: 3px;
   }
 </style>
+
+<style is:global>
+  /* Borde con degradado giratorio para la foto del hero */
+  @property --ring-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .hero-ring {
+    background: conic-gradient(from var(--ring-angle), #2f6fe3, #8ab4ff, #25d3a0, #2f6fe3 60%, rgba(255,255,255,0.08) 75%, #2f6fe3);
+    animation: ring-spin 6s linear infinite;
+  }
+  @keyframes ring-spin {
+    to { --ring-angle: 360deg; }
+  }
+  /* Brillo que cruza el botón principal */
+  .shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-120%) skewX(-20deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    animation: shine 3.5s ease-in-out infinite;
+  }
+  @keyframes shine {
+    0%, 60% { transform: translateX(-120%) skewX(-20deg); }
+    100% { transform: translateX(220%) skewX(-20deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-ring, .shine::after { animation: none; }
+  }
+</style>
